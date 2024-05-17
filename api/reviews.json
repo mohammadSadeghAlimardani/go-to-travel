@@ -1,0 +1,37 @@
+[
+    {
+        "destination" : "ancinet pyramids",
+        "text" : "Show travel details, a galleries allow the users to search and amore and our simply bookings from allows visitors to there a easily book their next tour.",
+        "stars" : 3,
+        "username" : "roman alex",
+        "userImage" : "./images/person-1.jpg"
+    },
+    {
+        "destination" : "gruner see",
+        "text" : "Show travel details, a galleries allow the users to search and amore and our simply bookings from allows visitors to there a easily book their next tour.",
+        "stars" : 5,
+        "username" : "john peter",
+        "userImage" : "./images/person-2.jpg"
+    },
+    {
+        "destination" : "barcelona",
+        "text" : "Show travel details, a galleries allow the users to search and amore and our simply bookings from allows visitors to there a easily book their next tour.",
+        "stars" : 5,
+        "username" : "jack mark",
+        "userImage" : "./images/person-3.jpg"
+    },
+    {
+        "destination" : "sidney",
+        "text" : "Show travel details, a galleries allow the users to search and amore and our simply bookings from allows visitors to there a easily book their next tour.",
+        "stars" : 4,
+        "username" : "jordan marcos",
+        "userImage" : "./images/person-4.jpg"
+    },
+    {
+        "destination" : "niagara fall",
+        "text" : "Show travel details, a galleries allow the users to search and amore and our simply bookings from allows visitors to there a easily book their next tour.",
+        "stars" : 2,
+        "username" : "mike vezowski",
+        "userImage" : "./images/person-5.jpg"
+    }
+]

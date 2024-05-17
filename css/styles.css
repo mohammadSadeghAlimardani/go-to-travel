@@ -1,0 +1,818 @@
+/* ==== GENERAL STYLES ==== */
+/* ======================== */
+
+@font-face {
+    font-family: 'Avenir-Light';
+    src: url('../fonts/Avenir\ Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Regular';
+    src: url('../fonts/Avenir\ Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Medium';
+    src: url('../fonts/Avenir\ Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TT Lakes Neue Trial Bold';
+    src: url('../fonts/TT\ Lakes\ Neue\ Trial\ Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TT Lakes Neue Trial ExtraBold';
+    src: url('../fonts/TT\ Lakes\ Neue\ Trial\ ExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TT Lakes Neue Trial Medium';
+    src: url('../fonts/TT\ Lakes\ Neue\ Trial\ Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TT Lakes Neue Trial Regular';
+    src: url('../fonts/TT\ Lakes\ Neue\ Trial\ Regular.ttf') format('truetype');
+}
+h1{
+    font-size: 1.5rem;
+}
+h2{
+    font-size: 1.5rem;
+}
+h3{
+    font-size: 1.17rem;
+}
+h4{
+    font-size: 1rem;
+}
+h5{
+    font-size: 0.83rem;
+}
+h6{
+    font-size: 0.67rem;
+}
+html{
+    font-family: 'Avenir-Regular';
+}
+.btn{
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+.btn.btn-success{
+    border: 1px solid #04A86C;
+    background-color: #04A86C;
+    color: white;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 0.75rem;
+}
+.btn.btn-success:hover{
+    background-color: white;
+    color: #04A86C;
+}
+.btn.btn-white{
+    border: 1px solid #3DBB8E;
+    background-color: white;
+    color: #636F6B;
+    transition: all 0.5s;
+}
+.btn.btn-white:hover{
+    background-color: #636F6B;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+
+/* ==== SIDEBAR ==== */
+/* ================= */
+
+.sidebar{
+    background-color: white;
+    box-shadow: 0 0 20px 1px #e7e6eb;
+    padding: 1.5rem;
+    position: fixed;
+    z-index: 2;
+    width: 250px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    transition: all 0.5s;
+}
+.sidebar.show{
+    transform: translateX(0);
+}
+.sidebar .sidebar-header{
+    margin-bottom: 1rem;
+}
+.sidebar .sidebar-header ul li a{
+    font-size: 2rem;
+    color: red;
+}
+.sidebar .sidebar-body ul li{
+    padding: 0.5rem 0;
+    transition: all 0.5s;
+}
+.sidebar .sidebar-body ul li:hover{
+    background-color: #383E70;
+    padding-left: 0.5rem ;
+}
+.sidebar .sidebar-body ul li:hover a{
+    color: white;
+}
+.sidebar .sidebar-body ul li a{
+    text-transform: capitalize;
+    color: #383E70;
+}
+
+/* ==== TOP NAV ==== */
+/* ================= */
+
+.top-nav .top-nav-container{
+    width: 75%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    padding: 2rem 0;
+    align-items: center;
+}
+.top-nav .top-nav-container ul li a{
+    color: #383E70;
+}
+.top-nav .top-nav-container ul:nth-child(1){
+    justify-self: left;
+}
+.top-nav .top-nav-container ul:nth-child(1) li a h1{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0 0;
+    font-size: 1.75rem;
+}
+.top-nav .top-nav-container ul:nth-child(1) li a h1 span:nth-child(1){
+    color: #04A86C;
+}
+.top-nav .top-nav-container ul:nth-child(2){
+    justify-self: right;
+    display: flex;
+    gap: 0 2rem;
+}
+.top-nav .top-nav-container ul:nth-child(2) li a{
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.top-nav .top-nav-container ul:nth-child(3){
+    justify-self: right;
+    display: flex;
+    gap: 0 2rem;
+}
+.top-nav .top-nav-container ul:nth-child(3) li:has(.cart-icon){
+    position: relative;
+}
+.top-nav .top-nav-container ul:nth-child(3) li:has(.cart-icon) span.bookmark{
+    font-size: 0.83rem;
+    position: absolute;
+    top: -35%;
+    right: -35%;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: #01A668;
+}
+.top-nav .top-nav-container ul:nth-child(3) li a{
+    font-size: 1.25rem;
+}
+.top-nav .top-nav-container ul:nth-child(3) li a.search-icon{
+    color: #04A86C;
+}
+.top-nav .top-nav-container ul:nth-child(3) li:has(a.show-sidebar){
+    display: none;
+}
+@media screen and (max-width:992px){
+    .top-nav .top-nav-container ul:nth-child(2) li{
+        display: none;
+    }
+    .top-nav .top-nav-container ul:nth-child(3) li:has(a.show-sidebar){
+        display: block;
+    }
+}
+@media screen and (max-width:480px){
+    .top-nav .top-nav-container{
+        width: 90%;
+    }
+}
+/* ==== HERO ==== */
+/* ============== */
+
+.hero{
+    padding: 6rem 0;
+    background: url('../images/hero-background.jpg') 0 50%/cover;
+}
+.hero .hero-container {
+    width: 75%;
+    margin: 0 auto;
+}
+.hero .hero-container h2{
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 600;
+    font-family: 'TT Lakes Neue Trial Bold';
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.hero .hero-container p{
+    color: white;
+    line-height: 1.4;
+    max-width: 567px;
+}
+.hero .hero-container section{
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background-color: rgba(80, 100, 125, 0.5);
+    border-radius: 10px;
+}
+.hero .hero-container section form{
+    max-width: 992px;
+    display: grid;
+    gap: 1rem 1rem;
+    grid-template-columns: 4fr 4fr 4fr 3fr;
+}
+.hero .hero-container section form input{
+    padding: 0.75rem 0.5rem;
+    border-radius: 10px;
+    height: 1.25rem;
+}
+.hero .hero-container section form input::placeholder{
+    text-transform: capitalize;
+    font-family: 'Avenir-Regular';
+}
+.hero .hero-container section form input:focus{
+    font-family: 'Avenir-Regular';
+    outline: none;
+    height: 1.25rem;
+}
+
+@media screen and (max-width:1170px){
+    .hero .hero-container section form{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width:768px){
+    .hero .hero-container h2{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width:567px){
+    .hero .hero-container section form{
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:480px){
+    .hero .hero-container{
+        width: 90%;
+    }
+}
+/* ==== ABOUT-US ==== */
+/* ================== */
+
+
+.about-us .about-us-container{
+    width: 75%;
+    margin: 0 auto;
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 4rem;
+}
+.about-us .about-us-container section.about-image{
+    height: 400px;
+}
+.about-us .about-us-container section.about-image > div{
+    position: relative;
+}
+.about-us .about-us-container section.about-image div img{
+    z-index: 1;
+    border-radius: 20px;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    width: calc(100% - 10px - 1rem);
+    height: 19.8rem;
+    transform: translateY(5%) translateX(-1rem);
+}
+.about-us .about-us-container section.about-image div .frame{
+    border: 5px solid #04A86C;
+    border-radius: 20px;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: calc(22rem - 10px);
+}
+.about-us .about-us-container section.about-text h2{
+    color: #383E70;
+    font-family: 'TT Lakes Neue Trial ExtraBold';
+    text-transform: capitalize;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+.about-us .about-us-container section.about-text p{
+    line-height: 1.4;
+    color: #383E70;
+    margin-bottom: 1rem;
+}
+.about-us .about-us-container section.about-text ul{
+    margin-bottom: 1.75rem;
+}
+.about-us .about-us-container section.about-text ul li{
+    color: #383E70;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+}
+.about-us .about-us-container section.about-text ul li i{
+    color: #04A86C;
+    font-weight: bold;
+}
+.about-us .about-us-container section.about-text a{
+    display: inline-block;
+}
+@media screen and (max-width:1200px){
+    .about-us .about-us-container{
+        grid-template-columns: 1fr;
+    }
+    .about-us .about-us-container section.about-image{
+        order: 1;
+    }
+}
+@media screen and (max-width:480px){
+    .about-us .about-us-container{
+        width: 90%;
+    }
+}
+
+/* ==== TOUR-TYPE ==== */
+/* =================== */
+
+.tour-type .tour-type-container{
+    padding: 4rem 0;
+    width: 75%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1.5rem;
+}
+.tour-type .tour-type-container section:nth-child(1){
+    align-self: center;
+}
+.tour-type .tour-type-container section:nth-child(1) h2{
+    font-size: 2rem;
+    color: #383E70;
+    font-family: 'TT Lakes Neue Trial Bold';
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+.tour-type .tour-type-container section:nth-child(1) p{
+    line-height: 1.4;
+    color: #383E70;
+    margin-bottom: 1.5rem;
+}
+.tour-type .tour-type-container section:nth-child(1) h4{
+    color: #383E70;
+    margin-bottom: 1rem;
+}
+.tour-type .tour-type-container section:nth-child(1) ul{
+    margin-bottom: 2rem;
+}
+.tour-type .tour-type-container section:nth-child(1) ul li{
+    color: #383E70;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+}
+.tour-type .tour-type-container section:nth-child(1) a{
+    display: inline-block;
+}
+.tour-type .tour-type-container section:nth-child(2){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1.5rem;
+}
+.tour-type .tour-type-container section:nth-child(2) article{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 4px 4px 1px 0 #e7e6eb;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid #e7e6eb;
+}
+.tour-type .tour-type-container section:nth-child(2) article h3{
+    margin-top: 1rem;
+    color: #383E70;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+@media screen and (max-width:1200px){
+    .tour-type .tour-type-container{
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:640px){
+    .tour-type .tour-type-container section:nth-child(2){
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:480px){
+    .tour-type .tour-type-container{
+        width: 90%;
+    }
+}
+
+/* ==== MOST-POPULAR-TOURS ==== */
+/* ============================ */
+
+.most-popular-tours .most-popular-tours-container{
+    min-width: 992px;
+    width: 75%;
+    margin: 0 auto;
+    padding: 2.5rem 0;
+}
+.most-popular-tours .most-popular-tours-container > h2{
+    color: #383E70;
+    font-size: 2rem;
+    font-family: 'TT Lakes Neue Trial Bold';
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.most-popular-tours .most-popular-tours-container .most-popular-items{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem 1.5rem;
+}
+.most-popular-tours .most-popular-tours-container .most-popular-items article{
+    border-radius: 10px;
+    border: 1px solid #e7e6eb;
+    box-shadow: 2px 2px 20px 0 #e7e6eb;
+    position: relative;
+}
+.most-popular-tours .most-popular-tours-container .most-popular-items article img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    height: 14rem;
+}
+.most-popular-tours .most-popular-tours-container .most-popular-items article section{
+    padding: 0.75rem 1.5rem;
+    height: 13.5rem;
+    box-shadow: 2px 2px 1px 0 #e7e6eb;
+}
+.most-popular-tours .most-popular-tours-container .most-popular-items article section ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.most-popular-tours .most-popular-tours-container .most-popular-items article section ul li{
+    color: #04A86C;
+    font-weight: bold;
+}
+.most-popular-tours .most-popular-tours-container .most-popular-items article section ul li h2{
+    color: #383E70;
+    font-family: 'TT Lakes Neue Trial Bold';
+    text-transform: capitalize;
+}
+.most-popular-tours .most-popular-tours-container .most-popular-items article section p{
+    color: #383E70;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+.most-popular-tours .most-popular-tours-container .most-popular-items article section a{
+    display: inline-block;
+    position: absolute;
+    bottom: 2rem;
+}
+@media screen and (max-width:1170px){
+    .most-popular-tours .most-popular-tours-container{
+        min-width: 768px;
+    }
+    .most-popular-tours .most-popular-tours-container .most-popular-items{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width:840px){
+    .most-popular-tours .most-popular-tours-container{
+        min-width: 0;
+    }
+    .most-popular-tours .most-popular-tours-container .most-popular-items{
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:480px){
+    .most-popular-tours .most-popular-tours-container{
+        width: 90%;
+    }
+}
+/* ==== REVIEWS & TESTIMONILAS ==== */
+/* ================================ */
+
+.reviews .reviews-container{
+    padding: 4rem 0;
+    width: 75%;
+    margin: 0 auto;
+}
+.reviews .reviews-container > h2{
+    color: #383E70;
+    font-size: 2rem;
+    font-family: 'TT Lakes Neue Trial Bold';
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.reviews .reviews-container .comments{
+    position: relative;
+    overflow: hidden;
+    height: 25rem;
+}
+.reviews .reviews-container .comments > ul li{
+    z-index: 1;
+    background-color: #e7e6eb;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    transform: translateY(-100%);
+    top: 50%;
+    font-size: 2rem;
+}
+.reviews .reviews-container .comments > ul li:has(.next-btn){
+    right: 0;
+}
+.reviews .reviews-container .comments > ul li:has(.prev-btn){
+    left: 0;
+}
+.reviews .reviews-container .comments .user-comments-container{
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    height: 25rem;
+}
+/* HIDE SCROLLBAR */
+.reviews .reviews-container .comments .user-comments-container::-webkit-scrollbar {
+    display: none;
+}  
+.reviews .reviews-container .comments .user-comments-container .user-comment{
+    position: absolute;
+    width: 400px;
+}
+.reviews .reviews-container .comments .user-comments-container .user-comment div{
+    position: relative;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #e7e6eb;
+    box-shadow: 2px 2px 1px 0 #e7e6eb;
+    height: 18rem;
+}
+.reviews .reviews-container .comments .user-comments-container .user-comment div h2{
+    color: #383E70;
+    font-family: 'TT Lakes Neue Trial Bold';
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+}
+.reviews .reviews-container .comments .user-comments-container .user-comment div ul{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.reviews .reviews-container .comments .user-comments-container .user-comment div ul i{
+    color: yellow;
+    font-size: 1.5rem;
+}
+.reviews .reviews-container .comments .user-comments-container .user-comment div p{
+    text-align: justify;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: #383E70;
+}
+.reviews .reviews-container .comments .user-comments-container .user-comment div h3{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #383E70;
+    font-family: 'TT Lakes Neue Trial Bold';
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+.reviews .reviews-container .comments .user-comments-container .user-comment div h4{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(200%);
+    color: #383E70;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+.reviews .reviews-container .comments .user-comments-container .user-comment div img{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #04A86C;
+    bottom: 0;
+    transform: translateY(50%) translateX(-50%);
+}
+@media screen and (max-width:480px){
+    .reviews .reviews-container{
+        width: 90%;
+    }
+}
+
+/* ==== BLOGS ==== */
+/* =============== */
+
+.blogs .blogs-container{
+    min-width: 992px;
+    width: 75%;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+.blogs .blogs-container > h2{
+    color: #383E70;
+    font-size: 2rem;
+    font-family: 'TT Lakes Neue Trial Bold';
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.blogs .blogs-container .blog-items{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem 1rem;
+}
+.blogs .blogs-container .blog-items article{
+    border-radius: 10px;
+    border: 1px solid #e7e6eb;
+    box-shadow: 2px 2px 1px 0 #e7e6eb;
+}
+.blogs .blogs-container .blog-items article img{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    height: 14rem;
+}
+.blogs .blogs-container .blog-items article section{
+    padding: 1rem;
+}
+.blogs .blogs-container .blog-items article section h2{
+    color: #383E70;
+    font-family: 'TT Lakes Neue Trial Bold';
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+.blogs .blogs-container .blog-items article section ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.blogs .blogs-container .blog-items article section ul li{
+    color: #888b91;
+}
+.blogs .blogs-container .blog-items article section ul li i{
+    color: black;
+}
+
+@media screen and (max-width:1170px){
+    .blogs .blogs-container{
+        min-width: 768px;
+    }
+    .blogs .blogs-container .blog-items{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width:840px){
+    .blogs .blogs-container{
+        min-width: 0;
+    }
+    .blogs .blogs-container .blog-items{
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:480px){
+    .blogs .blogs-container{
+        width: 90%;
+    }
+}
+
+/* ==== FOOTER ==== */
+/* ================ */
+
+.footer{
+    padding: 3rem 0;
+    background-color: #818fbe;
+}
+.footer .footer-container{
+    min-width: 840px;
+    padding-bottom: 3rem;
+    width: 75%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem 2rem;
+    justify-items: flex-end;
+}
+.footer .footer-container article:nth-child(1) h2{
+    color: white;
+    display: flex;
+    gap: 0 0;
+    font-family: 'TT Lakes Neue Trial Bold';
+    margin-bottom: 2rem;
+}
+.footer .footer-container article:nth-child(1) h2 span:nth-child(1){
+    color: #04A86C;
+}
+.footer .footer-container article:nth-child(1) p{
+    line-height: 1.4;
+    color: white;
+    margin-bottom: 1rem;
+}
+.footer .footer-container article:nth-child(1) ul{
+    display: flex;
+    gap: 0 2rem;
+}
+.footer .footer-container article:nth-child(1) ul li{
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    background-color: white;
+    place-items: center;
+    border-radius: 50%;
+}
+.footer .footer-container article:nth-child(1) ul li i{
+    color: #04A86C;
+}
+.footer .footer-container article:nth-child(2) h2{
+    margin-bottom: 2rem;
+    color: white;
+    text-transform: capitalize;
+}
+.footer .footer-container article:nth-child(2) p{
+    line-height: 1.4;
+    color: white;
+}
+.footer .footer-container article:nth-child(3) h2{
+    margin-bottom: 2rem;
+    color: white;
+    text-transform: capitalize;
+}
+.footer .footer-container article:nth-child(3) ul li{
+    display: flex;
+    gap: 0 0.5rem;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+.footer .copy-right{
+    padding-top: 1rem;
+    text-align: center;
+    border-top: 1px solid white;
+}
+.footer .copy-right .copy-right-container{
+    width: 75%;
+    margin: 0 auto;
+}
+.footer .copy-right p{
+    color: white;
+    line-height: 1.4;
+}
+
+@media screen and (max-width:1170px){
+    .footer .footer-container{
+        grid-template-columns: 1fr 1fr;
+        justify-items: flex-start;
+    }
+}
+@media screen and (max-width:992px){
+    .footer .footer-container{
+        min-width: 0;
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:480px){
+    .footer .footer-container{
+        width: 90%;
+    }
+}

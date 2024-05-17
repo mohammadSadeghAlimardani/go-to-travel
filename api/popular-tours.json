@@ -1,0 +1,20 @@
+[
+    {
+        "destination" : "gruner see",
+        "price" : 149,
+        "image" : "./images/gruner see.png",
+        "text" : "Grüner See (Green Lake) is a lake in Styria, Austria in a village named Tragöß, which is part of the municipality Tragöß-Sankt Katharein."
+    },
+    {
+        "destination" : "moscow",
+        "price" : 499,
+        "image" : "./images/moscow.png",
+        "text" : "Moscow is the capital and largest city of Russia. The city stands on the Moskva River in Central Russia."
+    },
+    {
+        "destination" : "cochem castle",
+        "price" : 799,
+        "image" : "./images/cochem castle.png",
+        "text" : "Cochem is the seat of and the biggest town in the Cochem-Zell district in Rhineland-Palatinate, Germany." 
+    }
+]
